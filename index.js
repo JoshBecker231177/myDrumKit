@@ -54,3 +54,15 @@ document.addEventListener("keydown", function(event) {
   const keyPressed = event.key;
   makeSound(keyPressed);
 })
+
+function buttonAnimation(currentKey) {
+
+  const activeButton = document.querySelector(`.${currentKey}`);
+
+  activeButton.classList.add("pressed");
+
+  setTimeout(function() {
+    activeButton.classList.remove("pressed");
+  }, 100);
+
+}
