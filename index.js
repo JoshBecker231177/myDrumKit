@@ -1,3 +1,34 @@
+
+// Detecting button click with mouse
+
+const theDrums = document.querySelectorAll(".drum");
+
+for (i = 0; i < theDrums.length; i++) {
+
+  theDrums[i].addEventListener("click", function() {
+
+    let buttonInnerHTML = this.innerHTML;
+
+    makeSound(buttonInnerHTML);
+
+    buttonAnimation(buttonInnerHTML);
+  })
+}
+
+// Detecting key pressed on keyboard
+
+document.addEventListener("keydown", function(event) {
+
+  const keyPressed = event.key;
+
+  makeSound(keyPressed);
+
+  buttonAnimation(keyPressed);
+
+})
+
+
+
 function makeSound(key) {
   switch (key) {
     case "w":
@@ -40,20 +71,6 @@ function makeSound(key) {
 
   }
 }
-
-const theDrums = document.querySelectorAll(".drum");
-
-for (i = 0; i < theDrums.length; i++) {
-  theDrums[i].addEventListener("click", function() {
-    let buttonInnerHTML = this.innerHTML;
-    makeSound(buttonInnerHTML);
-  })
-}
-
-document.addEventListener("keydown", function(event) {
-  const keyPressed = event.key;
-  makeSound(keyPressed);
-})
 
 function buttonAnimation(currentKey) {
 
